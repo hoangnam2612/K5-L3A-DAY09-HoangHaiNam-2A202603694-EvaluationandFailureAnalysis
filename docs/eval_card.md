@@ -2,8 +2,8 @@
 
 Card này đi kèm mỗi báo cáo và được dùng lại ở Day 10.
 
-- **Run ID / eval set SHA:** baseline `E-swarm-20261117-274b`; `E-fixed-20261117-274b`; `E-seeded_regression-20261117-274b`; eval set `274bbd989d64`
-- **Phiên bản:** code = commit chứa card này · eval set v1 (sha 274bbd989d64) · metric_spec 1.0 · grader `lab9.graders.GRADERS` cùng commit · seeds 11/22/33/44/55 · MockLLM, Python 3.14
+- **Run ID / eval set SHA:** baseline `E-swarm-20261117-948e`; `E-fixed-20261117-948e`; `E-seeded_regression-20261117-948e`; eval set `948eb0096715`
+- **Phiên bản:** code = commit chứa card này · eval set v1 (sha 948eb0096715) · metric_spec 1.0 · grader `lab9.graders.GRADERS` cùng commit · seeds 11/22/33/44/55 · MockLLM, Python 3.14
 - **Eval set:** v1, 14 item × 5 seed = 70 trial, nguồn `lab8_public`; nhãn tách riêng `labels_v1.json`; mỗi item có `failure_modes` và `provenance.from_trace`
 - **Metric & ngưỡng (`config/metric_spec.yaml`):** `approval_bypass` ≤ 0 (chặn) · `secret_leak` ≤ 0 (chặn) · `refund_amount_correct` ≥ 0.95 và không giảm có ý nghĩa (chặn) · `pass_rate` ≥ 0.85 và không giảm có ý nghĩa (chặn) · `reply_matches_ledger` ≥ 0.95 và không giảm có ý nghĩa (chặn, bắt FM-08) · `db_fact_kept` ≥ 0.95 · `pass_5` ≥ 0.80 · `cost_per_success` tăng ≤ 10% (theo dõi)
 - **Kết quả baseline vs PR (paired bootstrap 1000 lần, rng 2027, CI 95%):**
@@ -33,7 +33,7 @@ Card này đi kèm mỗi báo cáo và được dùng lại ở Day 10.
 
 ## Mục v2 (Advanced / Expert)
 
-- **Eval set v2:** `eval_set_v2.jsonl` sha `3ad438d6c77e`, 28 item (14 v1 + 14 adversarial) × 5 seed = 140 trial; mọi cơ chế tấn công đã map sang FM trong `config/fm_map.yaml`; mỗi FM bị tấn công có ≥3 item (`evalset --v2` = 0 problem). Baseline `E-swarm-20261117-3ad4`.
+- **Eval set v2:** `eval_set_v2.jsonl` sha `e7c05e588b29`, 28 item (14 v1 + 14 adversarial) × 5 seed = 140 trial; mọi cơ chế tấn công đã map sang FM trong `config/fm_map.yaml`; mỗi FM bị tấn công có ≥3 item (`evalset --v2` = 0 problem). Baseline `E-swarm-20261117-e7c0`.
 - **Ngưỡng chọn từ A/A:** `lab9.mutation --aa 66,77,88,99,110` cho Δ = 0.0000 trên mọi metric (MockLLM tất định, không có nhiễu). Với LLM thật Δ > 0 do lấy mẫu, nên sàn phải nằm ngoài dải đó. Ở đây `pass_hat_5` baseline = 0.8929, sàn `min: 0.80` (≥ 0.8 theo rubric) cách baseline 0.09. Honest PR (`fixed` = 1.0, `honest_refactor`) vượt sàn; `flaky_regression` thấp hơn sàn. Với model thật phải đo lại dải A/A rồi đặt sàn ngoài nó.
 - **Slice nào bắt lỗi nào** (`config/metric_spec_v2.yaml`, `slices`):
 

@@ -1,0 +1,4 @@
+# Eval-set hashes are computed over file bytes: keep LF on every OS so CI and local runs agree.
+src/data/eval/*.jsonl text eol=lf
+src/data/eval/*.json text eol=lf
+src/reports/*.json text eol=lf

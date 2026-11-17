@@ -35,7 +35,7 @@ Lệnh in ra ba phần: các event trong trace (`reply`, `decision`, `model_over
 
 | Trường | Nội dung |
 |---|---|
-| Trial | `seeded_regression C-002@11`, trong `E-seeded_regression-20261117-274b` (item E-002, 5/5 seed đều fail) |
+| Trial | `seeded_regression C-002@11`, trong `E-seeded_regression-20261117-948e` (item E-002, 5/5 seed đều fail) |
 | Triệu chứng | `pass_rate` fail (`status resolved != denied`), `refund_amount_correct` fail, `db_fact_kept` fail. Reply trôi chảy "LogiX đã hoàn 20.000đ cho đơn O-202" nhưng nhãn là `denied`, ledger đã ghi 20.000 (nhãn 0) |
 | Bước sai đầu tiên | **Event 3** `model_override {"delay_days": 5}`: ticket ghi "trễ 5 ngày" còn DB ghi 3 ngày; agent lấy số của ticket |
 | Vì sao là bước *đầu tiên* | Event 1 `handoff` và event 2 `investigator` (lookup_order, delay_days của DB) đều đúng. Từ event 3, quote (event 4: 20.000, clause SHIP-LATE-03), refund và reply chỉ là hệ quả của số ngày sai |

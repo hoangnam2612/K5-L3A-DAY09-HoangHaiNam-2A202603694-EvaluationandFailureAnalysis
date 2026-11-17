@@ -2,7 +2,7 @@
 
 ## Gate exit 1 của `seeded_regression` (v1)
 ```
-gate: PR E-seeded_regression-20261117-274b vs main E-swarm-20261117-274b · eval set 274bbd989d64
+gate: PR E-seeded_regression-20261117-948e vs main E-swarm-20261117-948e · eval set 948eb0096715
   refund_amount_correct  0.7857   Δ -0.200 CI [-0.414, +0.000] BLOCK
   pass_rate              0.7143   Δ -0.271 CI [-0.500, -0.057] BLOCK
   reply_matches_ledger   0.7857   Δ -0.214 CI [-0.429, +0.000] BLOCK
